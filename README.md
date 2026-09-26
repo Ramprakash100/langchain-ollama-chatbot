@@ -1,30 +1,68 @@
-# LangChain Ollama Chatbot
+# 🤖 LangChain Gemma 2B Streamlit Chatbot
 
-A simple chatbot built using LangChain, Ollama Gemma 2B, and Streamlit.
+A simple AI chatbot built using **LangChain**, **Gemma 2B**, **Ollama**, and **Streamlit**. This project demonstrates how to build a lightweight chatbot using a locally running open-source Large Language Model (LLM).
 
-## Features
+The application uses **LangChain Expression Language (LCEL)** to connect a prompt template, Ollama's Gemma 2B model, and an output parser into a simple processing chain. **LangSmith** is also configured for tracing and monitoring the LangChain workflow.
 
-- Interactive chatbot interface using Streamlit
-- Uses Ollama Gemma 2B as the local LLM
-- Prompt templating with LangChain
-- Uses LangChain output parsers
-- LangSmith tracking support
+---
 
-## Technologies Used
+## ✨ Features
 
-- Python
-- LangChain
-- Ollama
-- Gemma 2B
-- Streamlit
-- LangSmith
+- 💬 Interactive chatbot interface using Streamlit
+- 🦜🔗 LangChain prompt templates
+- 🔗 LangChain Expression Language (LCEL) chain
+- 🤖 Gemma 2B running locally through Ollama
+- 📊 LangSmith integration for tracing and monitoring
+- 🔐 Environment variable support using `python-dotenv`
+- ⚡ Lightweight and easy-to-understand implementation
+- 🖥️ Local LLM inference without requiring a paid LLM API
 
-## Project Structure
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|------------|---------|
+| 🐍 Python | Programming language |
+| 🦜🔗 LangChain | LLM application framework |
+| 🤖 Gemma 2B | Large language model |
+| 🦙 Ollama | Local LLM runtime |
+| 🎈 Streamlit | Web application interface |
+| 📊 LangSmith | LangChain tracing and monitoring |
+| 🔐 python-dotenv | Environment variable management |
+
+---
+
+## 🏗️ Architecture
 
 ```text
-langchain-ollama-chatbot/
-│
-├── app.py
-├── requirements.txt
-├── README.md
-└── .gitignore
+                    ┌─────────────────┐
+                    │      User       │
+                    └────────┬────────┘
+                             │
+                             ▼
+                    ┌─────────────────┐
+                    │    Streamlit    │
+                    │       UI        │
+                    └────────┬────────┘
+                             │
+                             ▼
+                    ┌─────────────────┐
+                    │ ChatPromptTemplate│
+                    └────────┬────────┘
+                             │
+                             ▼
+                    ┌─────────────────┐
+                    │    Gemma 2B     │
+                    │     Ollama      │
+                    └────────┬────────┘
+                             │
+                             ▼
+                    ┌─────────────────┐
+                    │ StrOutputParser │
+                    └────────┬────────┘
+                             │
+                             ▼
+                    ┌─────────────────┐
+                    │    Response     │
+                    └─────────────────┘
